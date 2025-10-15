@@ -1,0 +1,17 @@
+body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f8fc;color:#1e2d50}
+.banner{background:linear-gradient(90deg,#1e5ac8,#3a7af2);color:#fff;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.banner-title{font-size:22px;font-weight:bold;margin-bottom:4px}
+.container{max-width:900px;margin:20px auto;padding:0 12px}
+.card{background:#fff;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:16px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+input,button{border-radius:10px;border:1px solid #d1d9ee;padding:10px;font-size:14px;width:100%}
+button{cursor:pointer;font-weight:600}
+button.primary{background:#1e5ac8;color:#fff;border:0}
+button.secondary{background:#4caf50;color:#fff;border:0}
+button.danger{background:#e74c3c;color:#fff;border:0}
+button:hover{filter:brightness(0.95)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;text-align:right;border-bottom:1px solid #e5e9f2}
+th{background:#eaf2ff;color:#1e5ac8;text-align:center}
+.footer{text-align:center;padding:10px;color:#556}

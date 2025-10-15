@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liquidação — v30.1</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1E5AC8"/>
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="banner">
+  <div class="banner-title">Liquidação — v30.1</div>
+  <div class="banner-info">
+    <div><strong>Tempo estimado:</strong> <span id="tempoQuitacao">—</span></div>
+    <div><strong>Data estimada:</strong> <span id="dataQuitacao">—</span></div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Parâmetros</h2>
+    <div class="grid">
+      <label>Saldo inicial (R$)<input id="saldoInicial" type="number" step="0.01"></label>
+      <label>Taxa mensal (% a.m.)<input id="taxaMensal" type="number" step="0.0001"></label>
+      <label>Parcela planejada (R$)<input id="parcelaPlanejada" type="number" step="0.01"></label>
+      <label>Valor sugerido (50 meses)<input id="valorSugerido" type="number" readonly></label>
+    </div>
+    <div class="row">
+      <button id="btnSalvarParametros">Salvar parâmetros</button>
+      <button id="btnResetar">Resetar</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Confirmação de Pagamento</h2>
+    <div class="grid">
+      <label>Valor pago (R$)<input id="valorPago" type="number" step="0.01"></label>
+      <label>Data<input id="dataPagamento" type="date"></label>
+      <label>Obs<input id="obs" type="text" placeholder="opcional"></label>
+    </div>
+    <div class="row">
+      <button id="btnConfirmarParcela" class="primary">Confirmar Parcela</button>
+      <button id="btnConfirmarAmortizacao" class="secondary">Confirmar Amortização</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Tabela Cumulativa</h2>
+    <div class="row">
+      <button id="btnExportarCSV" class="primary">Exportar CSV</button>
+      <button id="btnApagarTabela" class="danger">Apagar Tabela</button>
+    </div>
+    <div class="table-wrap">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th>#</th><th>Data</th><th>Tipo</th><th>Valor Pago</th><th>Juros</th><th>Amortização</th><th>Saldo</th><th>Obs</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">Funciona offline • PWA instalável • Dados salvos localmente</footer>
+
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+</script>
+</body>
+</html>
